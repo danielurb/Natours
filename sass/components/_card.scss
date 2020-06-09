@@ -12,6 +12,7 @@
     top: 0;
     left: 0;
     width: 100%;
+    -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
     border-radius: 3px;
     overflow: hidden;
@@ -73,7 +74,17 @@
           $color-secondary-light,
           $color-secondary-dark
         ),
-        url(../img/nat-5.jpg);
+        url(../img/nat-5-small.jpg);
+      @media (min-resolution: 192dpi) and (min-width: 75em),
+             (-webkit-min-device-pixel-ratio: 2) and (min-width: 75em),
+             (min-width: 125em) {
+        background-image: linear-gradient(
+            to right bottom,
+            $color-secondary-light,
+            $color-secondary-dark
+          ),
+          url(../img/nat-5.jpg);
+      }
     }
 
     &--2 {
@@ -82,7 +93,17 @@
           $color-primary-light,
           $color-primary-dark
         ),
-        url(../img/nat-6.jpg);
+        url(../img/nat-6-small.jpg);
+      @media (min-resolution: 192dpi) and (min-width: 75em),
+             (-webkit-min-device-pixel-ratio: 2) and (min-width: 75em),
+             (min-width: 125em) {
+        background-image: linear-gradient(
+            to right bottom,
+            $color-primary-light,
+            $color-primary-dark
+          ),
+          url(../img/nat-6.jpg);
+      }
     }
 
     &--3 {
@@ -91,7 +112,17 @@
           $color-tertiary-light,
           $color-tertiary-dark
         ),
-        url(../img/nat-7.jpg);
+        url(../img/nat-7-small.jpg);
+      @media (min-resolution: 192dpi) and (min-width: 75em),
+             (-webkit-min-device-pixel-ratio: 2) and (min-width: 75em),
+             (min-width: 125em) {
+        background-image: linear-gradient(
+            to right bottom,
+            $color-tertiary-light,
+            $color-tertiary-dark
+          ),
+          url(../img/nat-7.jpg);
+      }
     }
   }
 
@@ -183,14 +214,13 @@
     font-weight: 100;
   }
 
-
-
-
-  @include respond(tab-port) {
+  // @include respond(tab-port) {
+  @media only screen and (max-width: 37.5em),
+          only screen and (hover: none) {
     height: auto;
     border-radius: 3px;
     background-color: $color-white;
-    box-shadow: 0 1.5rem 4rem rgba($color-black, .15);
+    box-shadow: 0 1.5rem 4rem rgba($color-black, 0.15);
 
     &__side {
       height: auto;
@@ -199,8 +229,8 @@
 
       &--back {
         transform: rotateY(0deg);
-        -webkit-clip-path: polygon(0 15%, 100% 0, 100% 100%, 0 100%);      
-        clip-path: polygon(0 15%, 100% 0, 100% 100%, 0 100%);      
+        -webkit-clip-path: polygon(0 15%, 100% 0, 100% 100%, 0 100%);
+        clip-path: polygon(0 15%, 100% 0, 100% 100%, 0 100%);
       }
     }
 
